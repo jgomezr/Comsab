@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Comsab</string>
+    <string name="add_button">Añadir</string>
+    <string name="update_button">Imprimir</string>
+    <string name="title_activity_transition_edit">Impresión recibo mercancía</string>
+    <string name="impresionTotal">Total productos recolectados</string>
+    <string name="producerID">Código del productor: </string>
+    <string name="producerCedula">Cédula del productor: </string>
+    <string name="producerNAME">Nombre del productor: </string>
+    <string name="productos">Detalle productos</string>
+</resources>
