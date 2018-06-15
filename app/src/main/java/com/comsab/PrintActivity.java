@@ -477,9 +477,11 @@ public class PrintActivity extends AppCompatActivity {
         TscDll.printerfont(0, 230, "3", 0, 1, 1, fmName.getText().toString());
         TscDll.printerfont(0, 260, "3", 0, 1, 1, "Código del productor:"+" "+fmId.getText().toString());
         TscDll.printerfont(0, 290, "3", 0, 1, 1, "Cédula del productor:"+" "+fmCedula.getText().toString());
+        TscDll.printerfont(0, 320, "3", 0, 1, 1, "PRODUCTO");
+        TscDll.printerfont(310, 320, "3", 0, 1, 1, "CANTIDAD");
 
         int counter = 1;
-        int h1 = 300;
+        int h1 = 320;
         Set set = productsByMeasure.entrySet();
         Iterator iterator = set.iterator();
         while(iterator.hasNext()&& counter <= quantitys.size()) {
@@ -504,9 +506,11 @@ public class PrintActivity extends AppCompatActivity {
             }
             
             if (canastillasProducto.get(me.getKey()) != null){
-                TscDll.printerfont(0, h1, "2", 0, 1, 1, pdto2 +" "+unit+":"+String.format( "%.2f",quantitys.get(me.getKey()) )+" /Can:"+canastillasProducto.get(me.getKey()));
+                TscDll.printerfont(0, h1, "2", 0, 1, 1, pdto2 );
+                TscDll.printerfont(300, h1, "2", 0, 1, 1, " "+unit+":"+String.format( "%.2f",quantitys.get(me.getKey()) )+" /Can:"+canastillasProducto.get(me.getKey()));
             }else{
-                TscDll.printerfont(0, h1, "2", 0, 1,1, pdto2+" "+unit+":"+String.format( "%.2f", quantitys.get(me.getKey()) ));
+                TscDll.printerfont(0, h1, "2", 0, 1,1, pdto2);
+                TscDll.printerfont(300, h1, "2", 0, 1,1, " "+unit+":"+String.format( "%.2f", quantitys.get(me.getKey()) ));
             }
         }
 
