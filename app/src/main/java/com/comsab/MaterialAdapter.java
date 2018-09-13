@@ -1,7 +1,5 @@
 package com.comsab;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
@@ -13,7 +11,6 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewAnimationUtils;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
@@ -54,41 +51,20 @@ public class MaterialAdapter extends RecyclerView.Adapter<MaterialAdapter.ViewHo
     @Override
     public void onViewAttachedToWindow(ViewHolder viewHolder) {
         super.onViewAttachedToWindow(viewHolder);
-        animateCircularReveal(viewHolder.itemView);
+        //animateCircularReveal(viewHolder.itemView);
     }
 
-    public void animateCircularReveal(View view) {
-        int centerX = 0;
-        int centerY = 0;
-        int startRadius = 0;
-        int endRadius = Math.max(view.getWidth(), view.getHeight());
-        Animator animation = ViewAnimationUtils.createCircularReveal(view, centerX, centerY, startRadius, endRadius);
-        view.setVisibility(View.VISIBLE);
-        animation.start();
-    }
+    //public void animateCircularReveal(View view) {
+       // int centerX = 0;
+        //int centerY = 0;
+       // int startRadius = 0;
+       // int endRadius = Math.max(view.getWidth(), view.getHeight());
+       // Animator animation = ViewAnimationUtils.createCircularReveal(view, centerX, centerY, startRadius, endRadius);
+        //view.setVisibility(View.VISIBLE);
+        //animation.start();
+    //}
 
-    public void animateCircularDelete(final View view, final int list_position) {
-        int centerX = view.getWidth();
-        int centerY = view.getHeight();
-        int startRadius = view.getWidth();
-        int endRadius = 0;
-        Animator animation = ViewAnimationUtils.createCircularReveal(view, centerX, centerY, startRadius, endRadius);
 
-        animation.addListener(new AnimatorListenerAdapter() {
-            @Override
-            public void onAnimationEnd(Animator animation) {
-                super.onAnimationEnd(animation);
-
-                Log.d(DEBUG_TAG, "SampleMaterialAdapter onAnimationEnd for Edit adapter position " + list_position);
-                Log.d(DEBUG_TAG, "SampleMaterialAdapter onAnimationEnd for Edit cardId " + getItemId(list_position));
-
-                view.setVisibility(View.INVISIBLE);
-                cardList.remove(list_position);
-                notifyItemRemoved(list_position);
-            }
-        });
-        animation.start();
-    }
 
     public void addCard(String name,String location, int color) {
         Card card = new Card();
@@ -97,7 +73,7 @@ public class MaterialAdapter extends RecyclerView.Adapter<MaterialAdapter.ViewHo
         card.setColorResource(color);
         card.setId(getItemCount());
         cardList.add(card);
-        ((MainActivity) context).doSmoothScroll(getItemCount());
+       // ((MainActivity) context).doSmoothScroll(getItemCount());
         notifyItemInserted(getItemCount());
     }
 

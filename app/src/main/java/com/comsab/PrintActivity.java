@@ -335,129 +335,129 @@ public class PrintActivity extends AppCompatActivity {
         TscDll.openport(mac);
         if (quantitys.size() == 1){
             if (insumo!= null && insumo.length()>1){
-                TscDll.setup(70, 85, 4, 4, 0, 0, 0);
+                TscDll.setup(70, 95, 4, 4, 0, 0, 0);
             }else{
-                TscDll.setup(70, 65, 4, 4, 0, 0, 0);
+                TscDll.setup(70, 90, 4, 4, 0, 0, 0);
             }
         }else if (quantitys.size() == 2){
             if (insumo!= null && insumo.length()>1) {
-                TscDll.setup(70, 90, 4, 4, 0, 0, 0);
+                TscDll.setup(70, 112, 4, 4, 0, 0, 0);
             }else{
-                TscDll.setup(70, 70, 4, 4, 0, 0, 0);
+                TscDll.setup(70, 90, 4, 4, 0, 0, 0);
             }
         }else if (quantitys.size() == 3){
             if (insumo!= null && insumo.length()>1) {
-                TscDll.setup(70, 95, 4, 4, 0, 0, 0);
+                TscDll.setup(70, 117, 4, 4, 0, 0, 0);
             }else{
-                TscDll.setup(70, 75, 4, 4, 0, 0, 0);
+                TscDll.setup(70, 95, 4, 4, 0, 0, 0);
             }
         }else if (quantitys.size() == 4){
             if (insumo!= null && insumo.length()>1) {
-                TscDll.setup(70, 100, 4, 4, 0, 0, 0);
+                TscDll.setup(70, 112, 4, 4, 0, 0, 0);
             }else{
-                TscDll.setup(70, 80, 4, 4, 0, 0, 0);
+                TscDll.setup(70, 97, 4, 4, 0, 0, 0);
             }
         }else if (quantitys.size() == 5){
             if (insumo!= null && insumo.length()>1) {
-                TscDll.setup(70, 105, 4, 4, 0, 0, 0);
+                TscDll.setup(70, 117, 4, 4, 0, 0, 0);
             }else{
-                TscDll.setup(70, 85, 4, 4, 0, 0, 0);
+                TscDll.setup(70, 97, 4, 4, 0, 0, 0);
             }
         }else if (quantitys.size() == 6){
             if (insumo!= null && insumo.length()>1) {
-                TscDll.setup(70, 110, 4, 4, 0, 0, 0);
+                TscDll.setup(70, 122, 4, 4, 0, 0, 0);
             }else{
-                TscDll.setup(70, 90, 4, 4, 0, 0, 0);
+                TscDll.setup(70, 102, 4, 4, 0, 0, 0);
             }
         }else if (quantitys.size() == 7){
             if (insumo!= null && insumo.length()>1) {
-                TscDll.setup(70, 115, 4, 4, 0, 0, 0);
+                TscDll.setup(70, 127, 4, 4, 0, 0, 0);
             }else{
-                TscDll.setup(70, 95, 4, 4, 0, 0, 0);
+                TscDll.setup(70, 107, 4, 4, 0, 0, 0);
             }
         }else if (quantitys.size() == 8){
             if (insumo!= null && insumo.length()>1) {
-                TscDll.setup(70, 120, 4, 4, 0, 0, 0);
+                TscDll.setup(70, 132, 4, 4, 0, 0, 0);
             }else{
-                TscDll.setup(70, 100, 4, 4, 0, 0, 0);
+                TscDll.setup(70, 112, 4, 4, 0, 0, 0);
             }
         }else if (quantitys.size() == 9){
             if (insumo!= null && insumo.length()>1) {
-                TscDll.setup(70, 125, 4, 4, 0, 0, 0);
+                TscDll.setup(70, 137, 4, 4, 0, 0, 0);
             }else{
-                TscDll.setup(70, 105, 4, 4, 0, 0, 0);
+                TscDll.setup(70, 117, 4, 4, 0, 0, 0);
             }
         }else if (quantitys.size() == 10){
             if (insumo!= null && insumo.length()>1) {
-                TscDll.setup(70, 130, 4, 4, 0, 0, 0);
+                TscDll.setup(70, 142, 4, 4, 0, 0, 0);
             }else{
-                TscDll.setup(70, 110, 4, 4, 0, 0, 0);
+                TscDll.setup(70, 122, 4, 4, 0, 0, 0);
             }
         }else if (quantitys.size() == 11){
             if (insumo!= null && insumo.length()>1) {
-                TscDll.setup(70, 135, 4, 4, 0, 0, 0);
+                TscDll.setup(70, 147, 4, 4, 0, 0, 0);
             }else{
-                TscDll.setup(70, 115, 4, 4, 0, 0, 0);
+                TscDll.setup(70, 127, 4, 4, 0, 0, 0);
             }
         }else if (quantitys.size() == 12){
             if (insumo!= null && insumo.length()>1) {
-                TscDll.setup(70, 140, 4, 4, 0, 0, 0);
+                TscDll.setup(70, 152, 4, 4, 0, 0, 0);
             }else{
-                TscDll.setup(70, 120, 4, 4, 0, 0, 0);
+                TscDll.setup(70, 132, 4, 4, 0, 0, 0);
             }
         }else if (quantitys.size() == 13){
             if (insumo!= null && insumo.length()>1) {
-                TscDll.setup(70, 145, 4, 4, 0, 0, 0);
+                TscDll.setup(70, 157, 4, 4, 0, 0, 0);
             }else{
-                TscDll.setup(70, 125, 4, 4, 0, 0, 0);
+                TscDll.setup(70, 137, 4, 4, 0, 0, 0);
             }
         }else if (quantitys.size() == 14){
             if (insumo!= null && insumo.length()>1) {
-                TscDll.setup(70, 150, 4, 4, 0, 0, 0);
+                TscDll.setup(70, 162, 4, 4, 0, 0, 0);
             }else{
-                TscDll.setup(70, 130, 4, 4, 0, 0, 0);
+                TscDll.setup(70, 142, 4, 4, 0, 0, 0);
             }
         }else if (quantitys.size() == 15){
             if (insumo!= null && insumo.length()>1) {
-                TscDll.setup(70, 155, 4, 4, 0, 0, 0);
+                TscDll.setup(70, 167, 4, 4, 0, 0, 0);
             }else{
-                TscDll.setup(70, 135, 4, 4, 0, 0, 0);
+                TscDll.setup(70, 147, 4, 4, 0, 0, 0);
             }
         }else if (quantitys.size() == 16){
             if (insumo!= null && insumo.length()>1) {
-                TscDll.setup(70, 160, 4, 4, 0, 0, 0);
+                TscDll.setup(70, 172, 4, 4, 0, 0, 0);
             }else{
-                TscDll.setup(70, 140, 4, 4, 0, 0, 0);
+                TscDll.setup(70, 152, 4, 4, 0, 0, 0);
             }
         }else if (quantitys.size() == 17){
             if (insumo!= null && insumo.length()>1) {
-                TscDll.setup(70, 165, 4, 4, 0, 0, 0);
+                TscDll.setup(70, 177, 4, 4, 0, 0, 0);
             }else{
-                TscDll.setup(70, 145, 4, 4, 0, 0, 0);
+                TscDll.setup(70, 157, 4, 4, 0, 0, 0);
             }
         }else if (quantitys.size() == 18){
             if (insumo!= null && insumo.length()>1) {
-                TscDll.setup(70, 170, 4, 4, 0, 0, 0);
+                TscDll.setup(70, 182, 4, 4, 0, 0, 0);
             }else{
-                TscDll.setup(70, 150, 4, 4, 0, 0, 0);
+                TscDll.setup(70, 162, 4, 4, 0, 0, 0);
             }
         }else if (quantitys.size() == 19){
             if (insumo!= null && insumo.length()>1) {
-                TscDll.setup(70, 175, 4, 4, 0, 0, 0);
+                TscDll.setup(70, 187, 4, 4, 0, 0, 0);
             }else{
-                TscDll.setup(70, 155, 4, 4, 0, 0, 0);
+                TscDll.setup(70, 167, 4, 4, 0, 0, 0);
             }
         }else if (quantitys.size() == 20){
             if (insumo!= null && insumo.length()>1) {
-                TscDll.setup(70, 180, 4, 4, 0, 0, 0);
+                TscDll.setup(70, 192, 4, 4, 0, 0, 0);
             }else{
-                TscDll.setup(70, 160, 4, 4, 0, 0, 0);
+                TscDll.setup(70, 172, 4, 4, 0, 0, 0);
             }
         }else if (quantitys.size() > 20){
             if (insumo!= null && insumo.length()>1) {
-                TscDll.setup(70, 180, 4, 4, 0, 0, 0);
+                TscDll.setup(70, 197, 4, 4, 0, 0, 0);
             }else{
-                TscDll.setup(70, 160, 4, 4, 0, 0, 0);
+                TscDll.setup(70, 172, 4, 4, 0, 0, 0);
             }
         }else{
             TscDll.setup(70, 50, 4, 4, 0, 0, 0);
@@ -477,11 +477,11 @@ public class PrintActivity extends AppCompatActivity {
         TscDll.printerfont(0, 230, "3", 0, 1, 1, fmName.getText().toString());
         TscDll.printerfont(0, 260, "3", 0, 1, 1, "Código del productor:"+" "+fmId.getText().toString());
         TscDll.printerfont(0, 290, "3", 0, 1, 1, "Cédula del productor:"+" "+fmCedula.getText().toString());
-        TscDll.printerfont(0, 320, "3", 0, 1, 1, "PRODUCTO");
-        TscDll.printerfont(310, 320, "3", 0, 1, 1, "CANTIDAD");
+        TscDll.printerfont(0, 330, "3", 0, 1, 1, "PRODUCTO");
+        TscDll.printerfont(310, 330, "3", 0, 1, 1, "CANTIDAD");
 
         int counter = 1;
-        int h1 = 320;
+        int h1 = 330;
         Set set = productsByMeasure.entrySet();
         Iterator iterator = set.iterator();
         while(iterator.hasNext()&& counter <= quantitys.size()) {
@@ -505,13 +505,8 @@ public class PrintActivity extends AppCompatActivity {
                 unit = "Ra";
             }
             
-            if (canastillasProducto.get(me.getKey()) != null){
-                TscDll.printerfont(0, h1, "2", 0, 1, 1, pdto2 );
-                TscDll.printerfont(300, h1, "2", 0, 1, 1, " "+unit+":"+String.format( "%.2f",quantitys.get(me.getKey()) )+" /Can:"+canastillasProducto.get(me.getKey()));
-            }else{
-                TscDll.printerfont(0, h1, "2", 0, 1,1, pdto2);
-                TscDll.printerfont(300, h1, "2", 0, 1,1, " "+unit+":"+String.format( "%.2f", quantitys.get(me.getKey()) ));
-            }
+            TscDll.printerfont(0, h1, "2", 0, 1,1, pdto2);
+            TscDll.printerfont(300, h1, "2", 0, 1,1, " "+unit+":"+String.format( "%.2f", quantitys.get(me.getKey()) ));
         }
 
         Set set2 = cantidades.entrySet();
@@ -521,27 +516,56 @@ public class PrintActivity extends AppCompatActivity {
             Map.Entry cant = (Map.Entry)iterator2.next();
             TscDll.printerfont(20, h1, "2", 0, 1, 1,  "Total "+(String) cant.getKey()+": "+String.format( "%.2f",cant.getValue()));
         }
-        TscDll.printerfont(20, h1+30, "2", 0, 1, 1, "Total Canastillas con producto: "+canastillas.get("canastillas"));
-        TscDll.printerfont(20, h1+60, "2", 0, 1, 1, "Canastillas en prestamo: "+canastillasPrestamo);
-        TscDll.printerfont(20, h1+90, "2", 0, 1, 1, "Canastillas vacias: "+canastillasVacias);
+        TscDll.printerfont(20, h1+40, "2", 0, 1, 1, "Total Canastillas con producto: "+canastillas.get("canastillas"));
+        TscDll.printerfont(20, h1+70, "2", 0, 1, 1, "Canastillas en prestamo: "+canastillasPrestamo);
+        TscDll.printerfont(20, h1+100, "2", 0, 1, 1, "Canastillas vacias: "+canastillasVacias);
         //print the inputs part if exit
         if (insumo!= null && insumo.length()>1){
             TscDll.printerfont(210, h1+130, "2", 0, 1, 1, "INSUMOS");
             TscDll.printerfont(0, h1+165, "2", 0, 1, 1, insumo);
             if(entregaInsumo.equals("1")){
                 TscDll.printerfont(0, h1+195, "2", 0, 1, 1, "Insumo entregado: Sí");
+                TscDll.printerfont(130, h1+220, "2", 0, 1, 1, "PEDIDO DE CANASTILLAS");
+                TscDll.printerfont(0, h1+250, "2", 0, 1, 1, "Teléfonos: 8415713 opción 0 - 3108358832");
+                TscDll.printerfont(53, h1+280, "2", 0, 1, 1, "Teléfono y WhatsApp: 3113101143");
+                TscDll.printerfont(45, h1+310, "3", 0, 1, 1, "SOLICITARLAS EL DÍA ANTERIOR");
+                TscDll.printerfont(130, h1+340, "3", 0, 1, 1, "A LA RECOLECCIÓN");
             }else{
                 TscDll.printerfont(0, h1+195, "2", 0, 1, 1, "Insumo entregado: No");
                 if(motivoNoEntrega.equals("1")){
-                    TscDll.printerfont(0, h1+225, "2", 0, 1, 1, "Motivo: El productor no se encontraba presente");
+                    TscDll.printerfont(0, h1+225, "2", 0, 1, 1, "MOTIVO:");
+                    TscDll.printerfont(0, h1+255, "2", 0, 1, 1, "El productor no se encontraba presente");
+                    TscDll.printerfont(130, h1+290, "2", 0, 1, 1, "PEDIDO DE CANASTILLAS");
+                    TscDll.printerfont(0, h1+320, "2", 0, 1, 1, "Teléfonos: 8415713 opción 0 - 3108358832");
+                    TscDll.printerfont(53, h1+350, "2", 0, 1, 1, "Teléfono y WhatsApp: 3113101143");
+                    TscDll.printerfont(45, h1+380, "3", 0, 1, 1, "SOLICITARLAS EL DÍA ANTERIOR");
+                    TscDll.printerfont(130, h1+410, "3", 0, 1, 1, "A LA RECOLECCIÓN");
                 }
                 if(motivoNoEntrega.equals("2")){
-                    TscDll.printerfont(0, h1+225, "2", 0, 1, 1, "Motivo: No se cuenta con los insumos");
+                    TscDll.printerfont(0, h1+225, "2", 0, 1, 1, "MOTIVO:");
+                    TscDll.printerfont(0, h1+255, "2", 0, 1, 1, "No se cuenta con los insumos");
+                    TscDll.printerfont(130, h1+290, "2", 0, 1, 1, "PEDIDO DE CANASTILLAS");
+                    TscDll.printerfont(0, h1+320, "2", 0, 1, 1, "Teléfonos: 8415713 opción 0 - 3108358832");
+                    TscDll.printerfont(53, h1+350, "2", 0, 1, 1, "Teléfono y WhatsApp: 3113101143");
+                    TscDll.printerfont(45, h1+380, "3", 0, 1, 1, "SOLICITARLAS EL DÍA ANTERIOR");
+                    TscDll.printerfont(130, h1+410, "3", 0, 1, 1, "A LA RECOLECCIÓN");
                 }
                 if(motivoNoEntrega.equals("3")){
-                    TscDll.printerfont(0, h1+225, "2", 0, 1, 1, "Motivo: Error en el despacho");
+                    TscDll.printerfont(0, h1+225, "2", 0, 1, 1, "MOTIVO:");
+                    TscDll.printerfont(0, h1+255, "2", 0, 1, 1, "Error en el despacho");
+                    TscDll.printerfont(130, h1+290, "2", 0, 1, 1, "PEDIDO DE CANASTILLAS");
+                    TscDll.printerfont(0, h1+320, "2", 0, 1, 1, "Teléfonos: 8415713 opción 0 - 3108358832");
+                    TscDll.printerfont(53, h1+350, "2", 0, 1, 1, "Teléfono y WhatsApp: 3113101143");
+                    TscDll.printerfont(45, h1+380, "3", 0, 1, 1, "SOLICITARLAS EL DÍA ANTERIOR");
+                    TscDll.printerfont(130, h1+410, "3", 0, 1, 1, "A LA RECOLECCIÓN");
                 }
             }
+        }else{
+            TscDll.printerfont(130, h1+135, "2", 0, 1, 1, "PEDIDO DE CANASTILLAS");
+            TscDll.printerfont(0, h1+165, "2", 0, 1, 1, "Teléfonos: 8415713 opción 0 - 3108358832");
+            TscDll.printerfont(53, h1+195, "2", 0, 1, 1, "Teléfono y WhatsApp: 3113101143");
+            TscDll.printerfont(45, h1+225, "3", 0, 1, 1, "SOLICITARLAS EL DÍA ANTERIOR");
+            TscDll.printerfont(130, h1+255, "3", 0, 1, 1, "A LA RECOLECCIÓN");
         }
         //TscDll.sendcommand("BLOCK 80,875,400,100, \"0\",0,8,8,\"We stand behind our products with one of the most comprehensive support programs in the Auto-ID industry.\"\n");
         TscDll.printlabel(1, 1);

@@ -154,9 +154,9 @@ public class MainActivity extends AppCompatActivity {
         recreate();
     }
 
-    public void doSmoothScroll(int position) {
-        recyclerView.smoothScrollToPosition(position);
-    }
+    //public void doSmoothScroll(int position) {
+       // recyclerView.smoothScrollToPosition(position);
+    //}
 
     //method to get the list of XML files
     public ArrayList<File> getfile(File dir) {
@@ -203,7 +203,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initCards(){
-        for (int i = 0; i < fileList.size(); i++) {
+        Log.d(DEBUG_TAG,"number of cards"+ fileList.size());
+        for (int i = fileList.size()-1 ; i >= 0; i--) {
 
             String folder = fileList.get(i).getName().replace(".xml","");
             root = new File(Environment.getExternalStorageDirectory().toString()+"/odk/instances/"+folder);
