@@ -57,6 +57,9 @@ public class PrintActivityTotal extends AppCompatActivity {
     public TreeMap<String, Double> quantitys = new TreeMap<String, Double>();
     public TreeMap<String, String> measure = new TreeMap<String, String>();
     public TreeMap<String, Double> cantidades = new TreeMap<String, Double>();
+    public TreeMap<String, Integer> canastillas = new TreeMap<String, Integer>();
+    public String NAcopiador;
+    public Integer totalCanastillas;
 
     @SuppressLint({"WrongViewCast", "ResourceAsColor"})
     @Override
@@ -71,6 +74,8 @@ public class PrintActivityTotal extends AppCompatActivity {
         bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
 
         CheckBlueToothState();
+
+        totalCanastillas = 0;
 
         //getting SDcard root path
         root = new File(Environment.getExternalStorageDirectory().toString()+"/odk/instances");
@@ -98,8 +103,10 @@ public class PrintActivityTotal extends AppCompatActivity {
                 DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
                 Document doc = dBuilder.parse(is);
 
+
                 Element element=doc.getDocumentElement();
                 element.normalize();
+
 
                 //get the products information
                 NodeList nList = doc.getElementsByTagName("repeat_productos");
@@ -113,6 +120,12 @@ public class PrintActivityTotal extends AppCompatActivity {
                         String producto = getValue ("nProducto", element2);
                         String unidad = getValue ("unidad", element2);
                         Double quantity = Double.valueOf(getValue("peso_total_producto_destare", element2));
+                        if( element2.getElementsByTagName("cantidadCanastillaProducto").getLength() > 0){
+                            canastilla = Integer.valueOf(getValue("cantidadCanastillaProducto", element2));
+                        }else{
+                            canastilla = 0;
+                        }
+
                         if (quantitys.containsKey(producto)){
                             quantitys.put(producto, quantitys.get(producto)+quantity);
                         }else{
@@ -129,6 +142,12 @@ public class PrintActivityTotal extends AppCompatActivity {
                         }else{
                             cantidades.put(unidad,quantity);
                         }
+
+                        if (canastillas.containsKey(producto)){
+                            canastillas.put(producto, canastillas.get(producto)+canastilla);
+                        }else{
+                            canastillas.put(producto,canastilla);
+                        }
                     }
                 }
             }
@@ -144,6 +163,7 @@ public class PrintActivityTotal extends AppCompatActivity {
             Map.Entry me = (Map.Entry)iterator.next();
             TextView tv = new TextView(this);
             TextView t2 = new TextView(this);
+            TextView t3 = new TextView(this);
             tv.setText((CharSequence) me.getKey());
             tv.setTextColor(Color.parseColor("#000000"));
             tv.setTypeface(tv.getTypeface(), Typeface.BOLD);
@@ -152,6 +172,14 @@ public class PrintActivityTotal extends AppCompatActivity {
             t2.setPadding(0,0,0,3);
             productList.addView(tv);
             productList.addView(t2);
+            if(measure.get(me.getKey()).equals("Kilos") ){
+                t3.setText("Canastillas: "+canastillas.get(me.getKey()).toString() );
+                t3.setTextColor(Color.parseColor("#000000"));
+                t3.setPadding(0,0,0,3);
+                productList.addView(t3);
+            }
+
+
         }
 
         Set set2 = cantidades.entrySet();
@@ -163,6 +191,18 @@ public class PrintActivityTotal extends AppCompatActivity {
             c.setTextColor(Color.parseColor("#000000"));
             productList.addView(c);
         }
+
+        Set set3 = canastillas.entrySet();
+        Iterator iterator3 = set3.iterator();
+        while(iterator3.hasNext()){
+            Map.Entry cant2 = (Map.Entry)iterator3.next();
+            totalCanastillas = totalCanastillas +(Integer) cant2.getValue();
+        }
+
+        TextView d = new TextView(this);
+        d.setText("Total Canastillas: "+totalCanastillas);
+        d.setTextColor(Color.parseColor("#000000"));
+        productList.addView(d);
 
     }
     //method to get the list of XML files
@@ -232,9 +272,9 @@ public class PrintActivityTotal extends AppCompatActivity {
         Toast.makeText(this, "imprimiendo", Toast.LENGTH_LONG).show();
         TscDll.openport(mac);
         if (quantitys.size() == 1){
-            TscDll.setup(70, 70, 4, 4, 0, 0, 0);
-        }else if (quantitys.size() == 2){
             TscDll.setup(70, 78, 4, 4, 0, 0, 0);
+        }else if (quantitys.size() == 2){
+            TscDll.setup(70, 80, 4, 4, 0, 0, 0);
         }else if (quantitys.size() == 3){
             TscDll.setup(70, 86, 4, 4, 0, 0, 0);
         }else if (quantitys.size() == 4){
@@ -300,6 +340,7 @@ public class PrintActivityTotal extends AppCompatActivity {
             Map.Entry me = (Map.Entry)iterator.next();
             TscDll.printerfont(70, h1, "2", 0, 1, 1, (String) me.getKey());
             TscDll.printerfont(70, h2, "2", 0, 1, 1, measure.get(me.getKey())+": "+String.format( "%.2f", me.getValue() ));
+            TscDll.printerfont(300, h2, "2", 0, 1, 1, "Can: "+canastillas.get(me.getKey()));
         }
 
         Set set2 = cantidades.entrySet();
@@ -309,6 +350,7 @@ public class PrintActivityTotal extends AppCompatActivity {
             Map.Entry cant = (Map.Entry)iterator2.next();
             TscDll.printerfont(80, h2, "2", 0, 1, 1,  "Total "+(String) cant.getKey()+": "+String.format( "%.2f",cant.getValue()));
         }
+        TscDll.printerfont(80, h2+25, "2", 0, 1, 1, "Total Canastillas: "+totalCanastillas);
         TscDll.printlabel(1, 1);
         TscDll.closeport(700);
     }
