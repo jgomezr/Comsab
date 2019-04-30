@@ -239,6 +239,15 @@ public class PrintActivity extends AppCompatActivity {
                 }
             }
 
+            Set set02 = measure.entrySet();
+            Iterator iterator02 = set02.iterator();
+            while(iterator02.hasNext()){
+                Map.Entry me02 = (Map.Entry)iterator02.next();
+                if (me02.getValue().equals("Unidads")){
+                    productsByMeasure.put((String)me02.getKey(),(String)me02.getValue());
+                }
+            }
+
             Log.d("check productos","producto "+productsByMeasure.size());
 
             Set set = productsByMeasure.entrySet();
