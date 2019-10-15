@@ -67,8 +67,12 @@ public class PrintActivity extends AppCompatActivity {
     public TreeMap<String, Integer> canastillas = new TreeMap<String,Integer>();
     public TreeMap<String,Integer> canastillasProducto = new TreeMap<String,Integer>();
     public Map<String,String> productsByMeasure = new LinkedHashMap<String,String>();
-    public String canastillasPrestamo;
     public String canastillasVacias;
+    public Integer canastillasVacias1;
+    public Integer canastillasVacias2;
+    public Integer canastillasVacias3;
+    public Integer canastillasVacias4;
+    public Integer canastillasVacias5;
     public String insumo = null;
     public String entregaInsumo;
     public String motivoNoEntrega;
@@ -165,9 +169,39 @@ public class PrintActivity extends AppCompatActivity {
             if(doc.getElementsByTagName("motivoNoEntregaInsumos").getLength()>0){
                 motivoNoEntrega = doc.getElementsByTagName("motivoNoEntregaInsumos").item(0).getTextContent();
             }
+            if(doc.getElementsByTagName("cantidadCanastillasVacias").getLength()>0){
+                canastillasVacias = doc.getElementsByTagName("cantidadCanastillasVacias").item(0).getTextContent();
+            }else{
+                if(doc.getElementsByTagName("cantidadCanastillas1Vacias").item(0).getTextContent().isEmpty()){
+                    canastillasVacias1 = 0;
+                }else{
+                    canastillasVacias1 = Integer.valueOf(doc.getElementsByTagName("cantidadCanastillas1Vacias").item(0).getTextContent());
 
-            canastillasPrestamo = doc.getElementsByTagName("cantidadCanastillasPrestamo").item(0).getTextContent();
-            canastillasVacias = doc.getElementsByTagName("cantidadCanastillasVacias").item(0).getTextContent();
+                }
+                if(doc.getElementsByTagName("cantidadCanastillas2Vacias").item(0).getTextContent().isEmpty()){
+                    canastillasVacias2 = 0;
+                }else{
+                    canastillasVacias2 = Integer.valueOf(doc.getElementsByTagName("cantidadCanastillas2Vacias").item(0).getTextContent());
+
+                }
+                if(doc.getElementsByTagName("cantidadCanastillas3Vacias").item(0).getTextContent().isEmpty()){
+                    canastillasVacias3 = 0;
+                }else{
+                    canastillasVacias3 = Integer.valueOf(doc.getElementsByTagName("cantidadCanastillas3Vacias").item(0).getTextContent());
+                }
+                if(doc.getElementsByTagName("cantidadCanastillas4Vacias").item(0).getTextContent().isEmpty()){
+                    canastillasVacias4 = 0;
+                }else{
+                    canastillasVacias4 = Integer.valueOf(doc.getElementsByTagName("cantidadCanastillas4Vacias").item(0).getTextContent());
+                }
+                if(doc.getElementsByTagName("cantidadCanastillas5Vacias").item(0).getTextContent().isEmpty()){
+                    canastillasVacias5 = 0;
+                }else{
+                    canastillasVacias5 = Integer.valueOf(doc.getElementsByTagName("cantidadCanastillas5Vacias").item(0).getTextContent());
+                }
+                canastillasVacias = String.valueOf(canastillasVacias1+canastillasVacias2+canastillasVacias3+canastillasVacias4+canastillasVacias5);
+            }
+
             idRecibo = doc.getElementsByTagName("instanceID").item(0).getTextContent();
             fmId.setText(farmer.toString());
             fmName.setText(farmerName.toString());
@@ -283,10 +317,6 @@ public class PrintActivity extends AppCompatActivity {
             canas.setText("Total Canastillas Con producto: "+canastillas.get("canastillas"));
             canas.setTextColor(Color.parseColor("#000000"));
             productList.addView(canas);
-            TextView canas2 = new TextView(this);
-            canas2.setText("Canastillas en prestamo: "+canastillasPrestamo);
-            canas2.setTextColor(Color.parseColor("#000000"));
-            productList.addView(canas2);
             TextView canas3 = new TextView(this);
             canas3.setText("Canastillas vacias: "+canastillasVacias);
             canas3.setTextColor(Color.parseColor("#000000"));
@@ -516,6 +546,8 @@ public class PrintActivity extends AppCompatActivity {
                 unit = "Kg";
             }else if(measure.get(me.getKey()).equals("Racimos")){
                 unit = "Ra";
+            }else if (measure.get(me.getKey()).equals("Unidads")){
+                unit = "Unidad";
             }
             
             TscDll.printerfont(0, h1, "2", 0, 1,1, pdto2);
@@ -530,8 +562,7 @@ public class PrintActivity extends AppCompatActivity {
             TscDll.printerfont(20, h1, "2", 0, 1, 1,  "Total "+(String) cant.getKey()+": "+String.format( "%.2f",cant.getValue()));
         }
         TscDll.printerfont(20, h1+40, "2", 0, 1, 1, "Total Canastillas con producto: "+canastillas.get("canastillas"));
-        TscDll.printerfont(20, h1+70, "2", 0, 1, 1, "Canastillas en prestamo: "+canastillasPrestamo);
-        TscDll.printerfont(20, h1+100, "2", 0, 1, 1, "Canastillas vacias: "+canastillasVacias);
+        TscDll.printerfont(20, h1+70, "2", 0, 1, 1, "Canastillas vacias: "+canastillasVacias);
         //print the inputs part if exit
         if (insumo!= null && insumo.length()>1){
             TscDll.printerfont(210, h1+130, "2", 0, 1, 1, "INSUMOS");
